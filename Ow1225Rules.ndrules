@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Queries>
+  <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="True"><![CDATA[// <Name>Keine Klasse mit mehr als 220 LOC</Name>
+warnif count > 0 
+from t in JustMyCode.Types
+where !t.IsGeneratedByCompiler 
+     && (t.NbLinesOfCode > 2
+     || t.NbMethods > 10)
+select new { t, t.NbLinesOfCode }
+]]></Query>
+  <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methoden zu groß oder komplex</Name>
+warnif count > 0 
+
+from m in JustMyCode.Methods
+
+where
+  !m.IsPropertyGetter
+&& !m.IsPropertySetter
+&& !m.IsConstructor
+&& !m.IsStatic
+
+&& (m.NbLinesOfCode > 2 || m.CyclomaticComplexity > 7)
+
+select new { m, m.NbLinesOfCode, m.CyclomaticComplexity, m.ParentType }]]></Query>
+</Queries>
