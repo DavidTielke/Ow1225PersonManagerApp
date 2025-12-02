@@ -1,4 +1,6 @@
-﻿namespace ConsoleClient;
+﻿using ConsoleClient.DataClasses;
+
+namespace ConsoleClient;
 
 public class PersonRepository
 {

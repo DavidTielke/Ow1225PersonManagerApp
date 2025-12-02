@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            var command = new PersonDisplayCommand();
+            var command = new PersonDisplayCommands();
             command.DisplayAllAdults();
             command.DisplayAllChildren();
         }

@@ -21,5 +21,29 @@ where
 
 && (m.NbLinesOfCode > 2 || m.CyclomaticComplexity > 7)
 
-select new { m, m.NbLinesOfCode, m.CyclomaticComplexity, m.ParentType }]]></Query>
+select new { m.ParentType, Method = m, m.NbLinesOfCode, m.CyclomaticComplexity }]]></Query>
+  <Group Name="Namensmuster" Active="True" ShownInReport="False">
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Musterkonsitenz</Name>
+warnif count > 0 
+
+let namePatterns = new string[]
+{
+ "Program",
+
+ "Manager",
+ "Repository",
+ "Parser",
+ "Reader",
+ "DisplayCommands"
+}
+
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.FullName.Contains(".DataClasses")
+                                                  && !t.IsGeneratedByCompiler)
+
+from t in managementClasses
+
+where !namePatterns.Any(np => t.SimpleName.EndsWith(np))
+
+select new { t }]]></Query>
+  </Group>
 </Queries>

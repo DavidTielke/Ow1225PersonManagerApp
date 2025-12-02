@@ -1,10 +1,10 @@
 ﻿namespace ConsoleClient;
 
-public class PersonDisplayCommand
+public class PersonDisplayCommands
 {
     private PersonManager _personManager;
 
-    public PersonDisplayCommand()
+    public PersonDisplayCommands()
     {
         _personManager = new PersonManager();
     }
