@@ -1,6 +1,6 @@
 ﻿using ConsoleClient.DataClasses;
 
-namespace ConsoleClient;
+namespace PersonManagement;
 
 public class PersonManager
 {
@@ -10,6 +10,7 @@ public class PersonManager
     {
         _personRepository = new PersonRepository();
     }
+
     public IQueryable<Person> GetAllAdults()
     {
         return _personRepository.Query().Where(p => p.Age >= 18);

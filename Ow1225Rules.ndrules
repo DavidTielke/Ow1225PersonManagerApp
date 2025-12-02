@@ -44,6 +44,67 @@ from t in managementClasses
 
 where !namePatterns.Any(np => t.SimpleName.EndsWith(np))
 
-select new { t }]]></Query>
+select new { t, Severity = Severity.Blocker }]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Namensmuster "Manager"</Name>
+warnif count > 0 
+
+let pattern = "Manager"
+
+let allowedMethods = new string[]
+{
+  "Add",
+  "Remove",
+  "Update"
+}
+
+let allowedPrefixes = new string[]
+{
+  "Get",
+  "Is",
+  "Are"
+}
+
+let patternClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.FullName.Contains(".DataClasses")
+                                                  && !t.IsGeneratedByCompiler
+                                                  && t.SimpleName.EndsWith(pattern))
+
+from t in patternClasses 
+
+let illegalMethods = t.Methods.Where(m => !allowedMethods.Any(am => m.SimpleName == am)
+                                        && !allowedPrefixes.Any(ap => m.SimpleName.StartsWith(ap)))
+
+where illegalMethods.Any()
+
+select new { t, illegalMethods, Severity = Severity.Blocker }]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Namensmuster "Repository"</Name>
+warnif count > 0 
+
+let pattern = "Repository"
+
+let allowedMethods = new string[]
+{
+  "Insert",
+  "Update",
+  "Delete",
+  "Query"
+}
+
+let allowedPrefixes = new string[]
+{
+
+}
+
+let patternClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.FullName.Contains(".DataClasses")
+                                                  && !t.IsGeneratedByCompiler
+                                                  && t.SimpleName.EndsWith(pattern))
+
+from t in patternClasses 
+
+let illegalMethods = t.Methods.Where(m => !allowedMethods.Any(am => m.SimpleName == am)
+                                        && !allowedPrefixes.Any(ap => m.SimpleName.StartsWith(ap)))
+
+where illegalMethods.Any()
+
+select new { t, illegalMethods, Severity = Severity.Blocker }]]></Query>
   </Group>
 </Queries>

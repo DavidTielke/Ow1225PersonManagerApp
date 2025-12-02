@@ -56,6 +56,7 @@
   <PathVariables />
   <RuleFiles>
     <RuleFile Active="True" Path=".\Ow1225Rules.ndrules" />
+    <RuleFile Active="True" Path="..\..\..\Users\david\OneDrive\david-tielke.de\NDepend Regeln\Temp IL.ndrules" />
   </RuleFiles>
   <GraphFiles />
   <ProjectRules AreActive="False" QueryPersistenceKind="PersistOnlyQueryIdForUntouchedQueries" />
