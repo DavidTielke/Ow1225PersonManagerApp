@@ -1,5 +1,4 @@
-﻿using ConsoleClient;
-
+﻿
 namespace DavidTielke.PMA.UI.ConsoleClient
 {
     internal class Program

@@ -1,4 +1,5 @@
-﻿using ConsoleClient.DataClasses;
+﻿using DavidTielke.PMA.CrossCutting.DataClasses;
+using DavidTielke.PMA.Data.DataStoring;
 
 namespace PersonManagement;
 

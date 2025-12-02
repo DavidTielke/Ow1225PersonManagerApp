@@ -18,4 +18,8 @@
     <Folder Include="DataClasses\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PersonManagement\PersonManagement.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,4 @@
-﻿using ConsoleClient.DataClasses;
+﻿using DavidTielke.PMA.CrossCutting.DataClasses;
 
 namespace DavidTielke.PMA.Data.DataStoring;
 

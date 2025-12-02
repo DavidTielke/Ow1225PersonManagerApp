@@ -7,4 +7,9 @@
 	  <Rootnamespace>DavidTielke.PMA.Logic.PersonManagement</Rootnamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataClasses\DataClasses.csproj" />
+    <ProjectReference Include="..\DataStoring\DataStoring.csproj" />
+  </ItemGroup>
+
 </Project>

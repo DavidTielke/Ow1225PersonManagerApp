@@ -1,9 +1,6 @@
-﻿namespace DavidTielke.PMA.UI.ConsoleClient;
+﻿using PersonManagement;
 
-public class PersonValidator
-{
-
-}
+namespace DavidTielke.PMA.UI.ConsoleClient;
 
 public class PersonDisplayCommands
 {
