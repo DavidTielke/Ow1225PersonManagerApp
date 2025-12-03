@@ -1,10 +1,10 @@
 ﻿
+using Configuration.Contract;
 using DavidTielke.PMA.CrossCutting.DataClasses;
 using DavidTielke.PMA.Data.DataStoring;
 using DavidTielke.PMA.Data.FileStoring;
 using Mappings;
 using Microsoft.Extensions.DependencyInjection;
-using PersonManagement;
 
 namespace DavidTielke.PMA.UI.ConsoleClient
 {
@@ -19,6 +19,9 @@ namespace DavidTielke.PMA.UI.ConsoleClient
             new ServiceCollectionInitializer().Initialize(collection);
 
             var provider = collection.BuildServiceProvider();
+
+            var config = provider.GetRequiredService<IConfigurator>();
+            config.Set("FileStoring", "CsvPath", "data.csv");
 
             var commands = provider.GetRequiredService<IPersonDisplayCommands>();
 

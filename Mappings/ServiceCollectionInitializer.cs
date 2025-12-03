@@ -1,4 +1,6 @@
-﻿using DavidTielke.PMA.Data.DataStoring;
+﻿using Configuration;
+using Configuration.Contract;
+using DavidTielke.PMA.Data.DataStoring;
 using DavidTielke.PMA.Data.DataStoring.Contract;
 using DavidTielke.PMA.Data.FileStoring;
 using DavidTielke.PMA.Data.FileStoring.Contract;
@@ -16,6 +18,7 @@ namespace Mappings
             collection.AddTransient<IPersonRepository, PersonRepository>();
             collection.AddTransient<IPersonParser, PersonParser>();
             collection.AddTransient<IFileReader, FileReader>();
+            collection.AddSingleton<IConfigurator, Configurator>();
         }
     }
 }

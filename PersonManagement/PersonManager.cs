@@ -13,7 +13,6 @@ public class PersonManager : IPersonManager
     {
         _personRepository = personRepository;
 
-        var repo = new PersonRepository(null, null);
     }
 
     public IQueryable<Person> GetAllAdults()
