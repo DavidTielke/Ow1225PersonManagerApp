@@ -10,6 +10,8 @@ public class PersonManager : IPersonManager
     public PersonManager(IPersonRepository personRepository)
     {
         _personRepository = personRepository;
+
+        var repo = new PersonRepository(null, null);
     }
 
     public IQueryable<Person> GetAllAdults()

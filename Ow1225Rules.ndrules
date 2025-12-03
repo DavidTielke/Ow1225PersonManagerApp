@@ -107,4 +107,45 @@ where illegalMethods.Any()
 
 select new { t, illegalMethods, Severity = Severity.Blocker }]]></Query>
   </Group>
+  <Group Name="Abhängigkeiten" Active="True" ShownInReport="False">
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Musterkonsitenz Komponenten</Name>
+warnif count > 0 
+
+let namePatterns = new string[]
+{
+ "Client",
+ "Management",
+ "Storing",
+ "DataClasses",
+}
+
+from t in JustMyCode.Assemblies
+
+where !namePatterns.Any(np => t.SimpleName.EndsWith(np))
+
+select new { t, Severity = Severity.Blocker }
+]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Keine direkten Abhängigkeiten zwischen Managementklassen</Name>
+warnif count > 0 
+
+let backlistedTypes = new string[]
+{
+  "Program",
+  "ServiceCollectionInitializer"
+}
+
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.FullName.Contains(".DataClasses")
+                                                  && !t.IsGeneratedByCompiler
+                                                  && !backlistedTypes.Any(blt => t.SimpleName == blt))
+
+from t in managementClasses
+
+let typesUsed = t.TypesUsed.Where(tu => !tu.IsThirdParty && !tu.IsGeneratedByCompiler)
+                           .Where(tu => !tu.ParentNamespace.FullName.Contains(".DataClasses"))
+let forbiddenTypes = typesUsed.Where(tu => !tu.IsInterface)
+
+where forbiddenTypes.Any()
+
+select new { t, forbiddenTypes}]]></Query>
+  </Group>
 </Queries>
