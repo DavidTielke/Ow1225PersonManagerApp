@@ -23,7 +23,7 @@ where
 
 select new { m.ParentType, Method = m, m.NbLinesOfCode, m.CyclomaticComplexity }]]></Query>
   <Group Name="Namensmuster" Active="True" ShownInReport="False">
-    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Musterkonsitenz</Name>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Musterkonsitenz Klassen</Name>
 warnif count > 0 
 
 let namePatterns = new string[]

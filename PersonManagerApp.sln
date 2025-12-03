@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataClasses", "DataClasses\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonManagement", "PersonManagement\PersonManagement.csproj", "{2F178788-B72D-485B-A914-387EC234122A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient", "ServiceClient\ServiceClient.csproj", "{379E25A2-253A-4FF5-B285-D877A7D9A536}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{2F178788-B72D-485B-A914-387EC234122A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F178788-B72D-485B-A914-387EC234122A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F178788-B72D-485B-A914-387EC234122A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{379E25A2-253A-4FF5-B285-D877A7D9A536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379E25A2-253A-4FF5-B285-D877A7D9A536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379E25A2-253A-4FF5-B285-D877A7D9A536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379E25A2-253A-4FF5-B285-D877A7D9A536}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +68,6 @@ Global
 		{A5556031-D110-4BA9-A1D0-0CE2D99659F7} = {8C36F472-1427-4E57-99FC-1D23F82729AD}
 		{02068EC5-F238-4E45-9FA4-7BA466C72062} = {A8EC3699-4881-448C-B363-291D99FDB239}
 		{2F178788-B72D-485B-A914-387EC234122A} = {3A2D0026-0611-41B5-9404-6E66AB4872A2}
+		{379E25A2-253A-4FF5-B285-D877A7D9A536} = {38264011-D997-4940-AB9C-D93D31181682}
 	EndGlobalSection
 EndGlobal

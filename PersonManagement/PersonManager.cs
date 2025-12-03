@@ -3,13 +3,13 @@ using DavidTielke.PMA.Data.DataStoring;
 
 namespace PersonManagement;
 
-public class PersonManager
+public class PersonManager : IPersonManager
 {
-    private readonly PersonRepository _personRepository;
+    private readonly IPersonRepository _personRepository;
 
-    public PersonManager()
+    public PersonManager(IPersonRepository personRepository)
     {
-        _personRepository = new PersonRepository();
+        _personRepository = personRepository;
     }
 
     public IQueryable<Person> GetAllAdults()
