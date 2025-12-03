@@ -2,6 +2,7 @@
 using DavidTielke.PMA.CrossCutting.DataClasses;
 using DavidTielke.PMA.Data.DataStoring;
 using DavidTielke.PMA.Data.FileStoring;
+using Mappings;
 using Microsoft.Extensions.DependencyInjection;
 using PersonManagement;
 
@@ -14,10 +15,8 @@ namespace DavidTielke.PMA.UI.ConsoleClient
             var collection = new ServiceCollection();
 
             collection.AddTransient<IPersonDisplayCommands, PersonDisplayCommands>();
-            collection.AddTransient<IPersonManager, PersonManager>();
-            collection.AddTransient<IPersonRepository, PersonRepository>();
-            collection.AddTransient<IPersonParser, PersonParser>();
-            collection.AddTransient<IFileReader, FileReader>();
+            
+            new ServiceCollectionInitializer().Initialize(collection);
 
             var provider = collection.BuildServiceProvider();
 

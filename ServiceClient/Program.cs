@@ -1,4 +1,6 @@
 
+using Mappings;
+
 namespace ServiceClient
 {
     public class Program
@@ -13,6 +15,8 @@ namespace ServiceClient
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            new ServiceCollectionInitializer().Initialize(builder.Services);
 
             var app = builder.Build();
 
