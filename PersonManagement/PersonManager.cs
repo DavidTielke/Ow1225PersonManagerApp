@@ -1,7 +1,9 @@
 ﻿using DavidTielke.PMA.CrossCutting.DataClasses;
 using DavidTielke.PMA.Data.DataStoring;
+using DavidTielke.PMA.Data.DataStoring.Contract;
+using DavidTielke.PMA.Logic.PersonManagement.Contract;
 
-namespace PersonManagement;
+namespace DavidTielke.PMA.Logic.PersonManagement;
 
 public class PersonManager : IPersonManager
 {

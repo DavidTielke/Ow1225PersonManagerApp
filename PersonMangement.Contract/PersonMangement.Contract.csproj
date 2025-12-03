@@ -4,13 +4,17 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <Rootnamespace>DavidTielke.PMA.Logic.PersonManagement</Rootnamespace>
+	  <Rootnamespace>DavidTielke.PMA.Logic.PersonManagement.Contract</Rootnamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="DataClasses\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Callbacks\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DataClasses\DataClasses.csproj" />
-    <ProjectReference Include="..\DataStoring\DataStoring.csproj" />
-    <ProjectReference Include="..\PersonMangement.Contract\PersonMangement.Contract.csproj" />
   </ItemGroup>
 
 </Project>

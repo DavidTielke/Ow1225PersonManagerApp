@@ -1,5 +1,6 @@
 ﻿using DavidTielke.PMA.CrossCutting.DataClasses;
-using DavidTielke.PMA.Data.FileStoring;
+using DavidTielke.PMA.Data.DataStoring.Contract;
+using DavidTielke.PMA.Data.FileStoring.Contract;
 
 namespace DavidTielke.PMA.Data.DataStoring;
 

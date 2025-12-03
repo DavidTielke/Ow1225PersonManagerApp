@@ -1,4 +1,6 @@
-﻿namespace DavidTielke.PMA.Data.FileStoring;
+﻿using DavidTielke.PMA.Data.FileStoring.Contract;
+
+namespace DavidTielke.PMA.Data.FileStoring;
 
 public class FileReader : IFileReader
 {

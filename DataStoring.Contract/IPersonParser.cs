@@ -1,6 +1,6 @@
 ﻿using DavidTielke.PMA.CrossCutting.DataClasses;
 
-namespace DavidTielke.PMA.Data.DataStoring;
+namespace DavidTielke.PMA.Data.DataStoring.Contract;
 
 public interface IPersonParser
 {
